@@ -24,14 +24,6 @@ export type TOrderBookData = {
   bids: TOrderBookEntry[]
   asks: TOrderBookEntry[]
 }
-export interface IOrderBookMessage {
-  market?: TMarketData
-  market_id: string
-  bids: [number, number][]
-  asks: [number, number][]
-  sequence: number
-  timestamp: number
-}
 
 export interface IOrderBookProps {
   symbol: TSymbolType
