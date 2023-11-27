@@ -84,8 +84,10 @@ export const useOrderBook = ({ symbol }: IOrderBookProps) => {
         setLastMarketTimestamp(currentTimestamp)
         if (ctx.data.last_trade_price && ctx.data.index_price) {
           setMarketData((prev: TMarketData | null) => {
-            prev?.index_price &&
+            if (prev?.index_price) {
               setIsPriceUp(prev?.index_price > ctx.data.index_price)
+            }
+
             return ctx.data
           })
         }
