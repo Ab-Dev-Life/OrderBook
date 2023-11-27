@@ -1,0 +1,43 @@
+.order-book {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f2f2f2;
+  }
+
+  .entries {
+    .bids,
+    .asks {
+      .entry {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+        &:nth-child(odd) {
+          background-color: #f9f9f9;
+        }
+      }
+      .bid {
+        background-color: #ffebeb;
+      }
+      .ask {
+        background-color: #ebffeb;
+      }
+    }
+
+    .market {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      background-color: #ffffe0;
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+}
