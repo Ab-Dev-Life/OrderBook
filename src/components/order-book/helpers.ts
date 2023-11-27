@@ -13,7 +13,7 @@ export const mergeOrderBookArrays = (
   )
 
   newArray?.forEach(([price, size]) => {
-    size === 0 ? orderBookMap.delete(price) : orderBookMap.set(price, size)
+    Number(size) === 0 ? orderBookMap.delete(price) : orderBookMap.set(price, size)
   })
 
   return Array.from(orderBookMap).sort((a, b) => a[0] - b[0])
