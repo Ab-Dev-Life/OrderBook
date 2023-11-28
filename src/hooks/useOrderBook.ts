@@ -29,7 +29,7 @@ export const useOrderBook = ({ symbol }: IOrderBookProps) => {
   )
 
   // Getting currency symbols
-  const [priceSymbol, amountSymbol] = useMemo(() => symbol.split('-'), [symbol])
+  const [amountSymbol, priceSymbol] = useMemo(() => symbol.split('-'), [symbol])
 
   useEffect(() => {
     const client = new Centrifuge(WS_URL, {
